@@ -1,0 +1,154 @@
+/* =========================================================================
+ * result.css — the phone frame, the buttons and the manifestation report.
+ * ========================================================================= */
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 22px;
+}
+
+.result__stage {
+  width: 100%;
+  max-width: 560px;
+}
+
+.result__heading {
+  margin: 0 0 14px;
+  font-family: var(--display);
+  font-size: clamp(24px, 3.8vw, 42px);
+  letter-spacing: 2px;
+  text-align: center;
+  background: var(--rainbow);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 2.5px var(--ink);
+  filter: drop-shadow(4px 4px 0 rgba(255, 46, 166, 0.85));
+  animation: rainbow-slide 7s linear infinite;
+}
+
+.phone {
+  width: min(380px, 92vw);
+  margin: 0 auto;
+  padding: 8px;
+  background: #150022;
+  border: 8px solid #150022;
+  border-radius: 34px;
+  box-shadow: 0 0 0 5px var(--cyan), 0 22px 44px rgba(0, 0, 0, 0.55);
+}
+
+.phone__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 7px;
+  font-family: var(--display);
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--cyan);
+}
+
+.phone__bar-label {
+  color: #ff9ade;
+}
+
+.phone__screen {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #000;
+  opacity: 0;
+  transform: scale(0.94) rotate(-1.6deg);
+  transition: opacity 0.24s ease-out, transform 0.3s cubic-bezier(0.2, 1.5, 0.4, 1);
+}
+
+.phone--ready .phone__screen {
+  opacity: 1;
+  transform: none;
+}
+
+.phone__canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.phone__sticker {
+  position: absolute;
+  padding: 3px 7px;
+  font-family: var(--display);
+  font-size: 11px;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+}
+
+.phone__sticker--tl {
+  top: 8px;
+  left: 8px;
+  background: var(--lime);
+  transform: rotate(-4deg);
+}
+
+.phone__sticker--br {
+  right: 8px;
+  bottom: 8px;
+  color: #fff;
+  background: var(--hot);
+  transform: rotate(3deg);
+}
+
+.result__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.glossy-btn {
+  padding: 13px 24px;
+  font-family: var(--display);
+  font-size: clamp(17px, 2.3vw, 23px);
+  letter-spacing: 1px;
+  color: #fff;
+  background: linear-gradient(180deg, #6df2ff, var(--cyan) 45%, var(--blue));
+  border: 5px solid var(--ink);
+  border-radius: 14px;
+  box-shadow: 0 8px 0 #0a1a6b, inset 0 5px 14px rgba(255, 255, 255, 0.6);
+  text-shadow: 2px 2px 0 var(--ink);
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.glossy-btn:hover {
+  transform: translateY(-2px) rotate(0.6deg);
+}
+
+.glossy-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 3px 0 #0a1a6b, inset 0 5px 14px rgba(255, 255, 255, 0.5);
+}
+
+.result__note {
+  margin: 14px 0 0;
+  font-size: 13px;
+  color: #5a2a70;
+  text-align: center;
+}
+
+.result__warning {
+  margin: 12px 0 0;
+  padding: 9px 12px;
+  font-size: 13px;
+  text-align: center;
+  color: #fff;
+  background: var(--red);
+  border: 3px solid var(--ink);
+  border-radius: 9px;
+  text-shadow: 1px 1px 0 var(--ink);
+}

@@ -1,0 +1,112 @@
+/* =========================================================================
+ * loading.css — the fake system window that appears while "manifesting".
+ * ========================================================================= */
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.loading__window {
+  width: min(760px, 100%);
+  background: #cfd8e8;
+  border: 5px solid var(--ink);
+  border-radius: 12px;
+  box-shadow: 9px 9px 0 var(--ink);
+}
+
+.loading__titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  font-family: var(--display);
+  font-size: 17px;
+  letter-spacing: 1px;
+  color: #fff;
+  background: linear-gradient(180deg, #ff6ec7, #b00078);
+  border-bottom: 4px solid var(--ink);
+  text-shadow: 2px 2px 0 var(--ink);
+}
+
+.loading__buttons i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 23px;
+  margin-left: 4px;
+  font-size: 13px;
+  font-style: normal;
+  color: #000;
+  background: #e2e2e2;
+  border: 2px solid #000;
+}
+
+.loading__body {
+  padding: 18px 18px 16px;
+  background: repeating-linear-gradient(180deg, rgba(0, 0, 0, 0.055) 0 2px, transparent 2px 4px), #dfe6f2;
+}
+
+.loading__message {
+  margin: 0 0 14px;
+  font-family: var(--display);
+  font-size: clamp(20px, 3.4vw, 34px);
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 #fff;
+}
+
+.loading__bar {
+  margin: 0;
+  padding: 12px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  font-size: clamp(12px, 2.3vw, 21px);
+  letter-spacing: 1px;
+  color: var(--lime);
+  text-align: center;
+  white-space: pre;
+  background: #0b0018;
+  border: 3px solid var(--ink);
+  border-radius: 8px;
+  text-shadow: 0 0 9px rgba(182, 255, 47, 0.85);
+}
+
+.loading__spinner {
+  display: flex;
+  justify-content: center;
+  margin: 14px 0 4px;
+}
+
+.loading__spinner span {
+  display: inline-block;
+  font-size: 40px;
+  color: var(--hot);
+  text-shadow: 3px 3px 0 var(--cyan);
+  animation: spin 1.6s linear infinite;
+}
+
+.loading__files {
+  margin: 10px auto 12px;
+  padding: 0;
+  max-width: 460px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: #1b0033;
+  list-style: none;
+}
+
+.loading__files li {
+  padding: 2px 0;
+}
+
+.loading__foot {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: #85185f;
+  text-align: center;
+}
